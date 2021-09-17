@@ -24,7 +24,7 @@ let initialState = {
     },//day
     {
       id: 2,
-      date: new Date(2021,10,1),
+      date: new Date(2021,9,2),
       projectName: 'Ежедневные отчеты',
       tasks: [
         {

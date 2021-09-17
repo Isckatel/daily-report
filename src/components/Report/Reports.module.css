@@ -1,0 +1,10 @@
+.listReports {
+  margin: 5px 5px 0 5px;
+}
+
+.elemList {
+  background-color: lightgray;
+  margin: 2px;
+  padding: 0 4px;
+  border-radius: 5px;
+}

@@ -1,4 +1,5 @@
 import './App.css';
+import ReportsContainer from './components/Report/ReportsContainer';
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <h1> Ежедневные отчеты </h1>
       </header>
       <main className="main">
-        <div className="left-block"> Левая колонка</div>
+        <div className="left-block"> <ReportsContainer /></div>
         <div className="center-block"> Центральная часть</div>
       </main>
     </div>
