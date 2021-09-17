@@ -1,3 +1,7 @@
+##Учебный проект «Ежедневные отчеты»
+
+Текущая цель проекта: одностраничное приложение, без запросов, без организации хранения данных, позволяющая создавать отчеты о проделанной работе. 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
