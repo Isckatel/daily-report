@@ -1,5 +1,5 @@
-import {createStore, combineReducers, applyMiddleware } from "redux";
-import thunkMiddleware from 'redux-thunk';
+import {createStore, combineReducers } from "redux";
+// import thunkMiddleware from 'redux-thunk';
 import reportsReducer from './reports-reducer';
 
 let reducers = combineReducers({

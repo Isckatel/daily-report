@@ -1,3 +1,7 @@
+const SET_CURRENT_REPORT = 'SET_CURRENT_REPORT';
+
+export const setCurrentReport = (id) => ({type:SET_CURRENT_REPORT, id});
+
 let initialState = {
   reportsData:[
     {
@@ -44,14 +48,22 @@ let initialState = {
         }
       ]//task
     }//day
-  ]
+  ],
+  currentReport:null
 }
 
 const reportsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_CURRENT_REPORT:
+      return {
+        ...state,
+        currentReport: action.id
+      }
     default:
       return state;
   }
 }
+
+
 
 export default reportsReducer;

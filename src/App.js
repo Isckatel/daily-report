@@ -1,5 +1,6 @@
 import './App.css';
-import ReportsContainer from './components/Report/ReportsContainer';
+import CurrReportContainer from './components/CurrReport/CurrReportContainer';
+import ReportsContainer from './components/Reports/ReportsContainer';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       </header>
       <main className="main">
         <div className="left-block"> <ReportsContainer /></div>
-        <div className="center-block"> Центральная часть</div>
+        <div className="center-block"> <CurrReportContainer/></div>
       </main>
     </div>
 
