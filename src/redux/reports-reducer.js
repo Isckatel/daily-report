@@ -49,7 +49,7 @@ let initialState = {
       ]//task
     }//day
   ],
-  currentReport:null
+  currentReport:1
 }
 
 const reportsReducer = (state = initialState, action) => {
