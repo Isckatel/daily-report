@@ -1,0 +1,36 @@
+.tabAll {
+    border: 1px solid black;
+    margin: 5px;
+    display: flex;
+}
+
+.tabColumn {
+    border: 1px solid black;
+}
+
+.tabRows {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+.tabInside {
+    display:flex;
+    
+    border: 1px solid black;
+}
+
+.tabItem {
+    border-right: 1px solid black;
+    padding: 5px;
+    flex: 1 0 33.33%;
+}
+
+.tabItemEnd {
+    padding: 5px;
+    flex: 1 0 33.33%;
+}
+
+.padding {
+    padding: 5px;
+}

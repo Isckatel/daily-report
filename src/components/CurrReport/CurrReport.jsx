@@ -1,25 +1,28 @@
 import React from 'react';
+import style from './CurrReport.module.css';
 
 const OneRep = (props) => {
     return (
-        <div>
-            <div>
+        <div className={style.tabAll}>
+            <div className={style.tabColumn + " " + style.padding}>
                 {props.date.getDay() + '-'
                 + props.date.getMonth() + '-'
                 + props.date.getFullYear()}
             </div>
-            <div>
+            <div className={style.tabColumn}>
                 {props.projectName}
-            </div>         
+            </div>
+            <div className={style.tabRows}>        
             {
                 props.tasks.map(
-                    (t)=><div>
-                        <div>{t.taskName}</div>
-                        <div>t.time</div>
-                        <div>{t.percent}</div>
+                    (t)=><div className={style.tabInside}>
+                        <div className={style.tabItem}>{t.taskName}</div>
+                        <div className={style.tabItem}>t.time</div>
+                        <div className={style.tabItemEnd}>{t.percent}</div>
                     </div>
                 )
-            }                                               
+            }
+            </div>                                                
         </div>
     );
 }
