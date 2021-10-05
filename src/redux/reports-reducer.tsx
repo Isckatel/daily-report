@@ -1,6 +1,14 @@
 const SET_CURRENT_REPORT = 'SET_CURRENT_REPORT';
 
-export const setCurrentReport = (id) => ({type:SET_CURRENT_REPORT, id});
+// type CurrentReportActionType = {
+//   type: typeof SET_CURRENT_REPORT,
+//   id: number
+// }
+
+export const setCurrentReport = (id:number) => ({type:SET_CURRENT_REPORT, id});
+
+type ActionTypes = ReturnType<typeof setCurrentReport > 
+                   
 
 let initialState = {
   reportsData:[
@@ -52,7 +60,7 @@ let initialState = {
   currentReport:2
 }
 
-const reportsReducer = (state = initialState, action) => {
+const reportsReducer = (state = initialState, action:ActionTypes) => {
   switch (action.type) {
     case SET_CURRENT_REPORT:
       return {

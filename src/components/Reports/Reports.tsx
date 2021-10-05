@@ -1,6 +1,13 @@
 import css from './Reports.module.css';
+import React from 'react'
 
-const Reports = (props) => {
+export type ReportDateType = {id: number, date: Date}
+
+interface IReports {
+  reportsDate:Array<ReportDateType>
+}
+
+const Reports: React.FC<IReports> = (props:IReports) => {
   let reportsElem = props.reportsDate.map((r)=>{
     return (
       <p className={css.elemList}>{r.date.getDay() + '-'

@@ -1,7 +1,7 @@
 import React from "react";
 import CurrReport from "./CurrReport";
 import {connect} from 'react-redux';
-import {setCurrentReport} from './../../redux/reports-reducer';
+import {setCurrentReport} from '../../redux/reports-reducer';
 
 class CurrReportContainer extends React.Component {
     render() {
