@@ -8,7 +8,6 @@ let mapStateToProps = (state:StateType) => ({
 })
 
 const connector = connect(mapStateToProps)
-
 type PropsReportsType = ConnectedProps<typeof connector>
 
 const ReportsContainer = (props:PropsReportsType) => {  

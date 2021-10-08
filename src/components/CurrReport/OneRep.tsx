@@ -1,7 +1,8 @@
 import React from 'react';
 import style from './CurrReport.module.css';
+import {ReportElemType}from './CurrReportContainer';
 
-const OneRep = (props) => {
+const OneRep:React.FC<ReportElemType> = (props:ReportElemType) => {
     return (
         <div className={style.tabAll}>
             <div className={style.tabColumn + " " + style.padding}>
@@ -27,21 +28,4 @@ const OneRep = (props) => {
     );
 }
 
-
-const CurrReport = (props) => {
-    let oneRepData;
-    if (props.reports.currentReport){
-        oneRepData = props.reports.reportsData[props.reports.currentReport-1];
-    }    
-    return (
-        <div>
-            {
-            props.reports.currentReport===null
-            ?<div>Отчет не выбран.</div>
-            :<OneRep {...oneRepData} />           
-            }        
-        </div>
-    );
-}
-
-export default CurrReport;
+export default OneRep
