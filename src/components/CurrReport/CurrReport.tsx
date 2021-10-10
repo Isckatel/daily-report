@@ -7,13 +7,20 @@ const CurrReport: React.FC<PropsReportsType> = (props:PropsReportsType) => {
     let oneRepData: ReportElemType;
     if (props.reports.currentReport){
         oneRepData = props.reports.reportsData[props.reports.currentReport-1];
+    } else {
+        oneRepData = {
+            id: 999,
+            date: new Date(),
+            projectName: 'Нет текущего отчета',
+            tasks: []
+        }
     }    
     return (
         <div>
             {
             props.reports.currentReport===null
             ?<div>Отчет не выбран.</div>
-            :<OneRep {...oneRepData} />           
+            :<OneRep reportElem={oneRepData} />           
             }        
         </div>
     );
