@@ -37,7 +37,7 @@ let initialState = {
     {
       id: 2,
       date: new Date(2021,9,2),
-      projectName: 'Ежедневные отчеты',
+      projectName: 'Ежедневные отчеты. TypeScript',
       tasks: [
         {
         taskName:'Создание презент.-го компонента Edit',

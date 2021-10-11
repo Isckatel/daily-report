@@ -1,21 +1,37 @@
 import React from 'react';
 import style from './CurrReport.module.css';
 import {ReportElemType}from './CurrReportContainer';
+import { Formik, Field, Form, FormikHelpers } from 'formik';
 
 type PropsOneRep = {
     reportElem: ReportElemType
 }
 
 const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
+    let str = props.reportElem.date.getDay() + '-'
+    + props.reportElem.date.getMonth() + '-'
+    + props.reportElem.date.getFullYear();
     return (
+        <Formik
+            enableReinitialize={true}
+            initialValues = {{
+                dateReport: str,
+                projectName:props.reportElem.projectName
+            }}
+            onSubmit={(
+                values: any,
+                { setSubmitting }: FormikHelpers<any>
+              ) => {
+                alert('Click');                 
+              }}
+        >
+        <Form>
         <div className={style.tabAll}>
             <div className={style.tabColumn + " " + style.padding}>
-                {props.reportElem.date.getDay() + '-'
-                + props.reportElem.date.getMonth() + '-'
-                + props.reportElem.date.getFullYear()}
+                <Field id="dateReport" name="dateReport" /> 
             </div>
             <div className={style.tabColumn}>
-                {props.reportElem.projectName}
+                <Field component="textarea" id="projectName" name="projectName" /> 
             </div>
             <div className={style.tabRows}>        
             {
@@ -32,6 +48,8 @@ const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
             }
             </div>                                                
         </div>
+        </Form>
+        </Formik>
     );
 }
 
