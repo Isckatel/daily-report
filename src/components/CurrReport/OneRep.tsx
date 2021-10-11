@@ -22,7 +22,10 @@ const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
                 props.reportElem.tasks.map(
                     (t)=><div className={style.tabInside}>
                         <div className={style.tabItem}>{t.taskName}</div>
-                        <div className={style.tabItem}>t.time</div>
+                        <div className={style.tabItem}>
+                            {[t.time.getHours(), t.time.getMinutes()].map(function (x) {
+                                return x < 10 ? "0" + x : x}).join(":")}
+                        </div>
                         <div className={style.tabItemEnd}>{t.percent}</div>
                     </div>
                 )

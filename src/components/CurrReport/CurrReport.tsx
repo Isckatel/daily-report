@@ -9,7 +9,7 @@ const CurrReport: React.FC<PropsReportsType> = (props:PropsReportsType) => {
         oneRepData = props.reports.reportsData[props.reports.currentReport-1];
     } else {
         oneRepData = {
-            id: 999,
+            id: 1000,
             date: new Date(),
             projectName: 'Нет текущего отчета',
             tasks: []

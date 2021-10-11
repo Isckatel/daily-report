@@ -8,3 +8,17 @@
   padding: 0 4px;
   border-radius: 5px;
 }
+
+.buttList {
+  width: 100%;
+  background-color: lightgray;
+  margin: 4px 2px;
+  padding: 4px 4px;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.buttList:hover {
+  cursor: pointer;
+}
