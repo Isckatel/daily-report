@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './CurrReport.module.css';
-import OneRep from './OneRep';
+import OneRep from './OneRepFormik';
 import {PropsReportsType, ReportElemType} from './CurrReportContainer'
 
 const CurrReport: React.FC<PropsReportsType> = (props:PropsReportsType) => {
