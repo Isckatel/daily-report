@@ -43,57 +43,45 @@ const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
             render={({ values }) => (
                 <Form>
                 <div className={style.tabAll}>
-                    <div className={style.tabColumn + " " + style.padding}>
-                        <Field id="dateReport" name="dateReport" /> 
+                    <div className={style.titleTab}>
+                        <div className={style.titleItem + " " + style.titDate}>Дата</div>
+                        <div className={style.titleItem + " " + style.nameProj}>Проект</div>
+                        <div className={style.titleItem + " " + style.per15}>Задача</div>
+                        <div className={style.titleItem + " " + style.per15}>Время</div>
+                        <div className={style.titleItem + " " + style.per15}>Выполнение, %</div>
                     </div>
-                    <div className={style.tabColumn}>
-                        <Field component="textarea" id="projectName" name="projectName" /> 
-                    </div>
-                    <div className={style.tabRows}>        
-                    {
-                        props.reportElem.tasks.map(
-                            (t:any)=><div className={style.tabInside}>
-                                    <div className={style.tabItem}>
-                                        {t.taskName}
-                                    </div>
-                                    <div className={style.tabItem}>
-                                        {t.time}
-                                    </div>
-                                    <div className={style.tabItemEnd}>
-                                        {t.percent}
-                                    </div>
-                                </div>
-                        )
-                    }
-
-                    <FieldArray
-                        name="tasks"
-                        render={arrayHelpers => (
-                        <div>
-                            {values.tasks.map((task, index) =>{ 
-                                
-                            return (
-                            <div key={index}>
-                                {/** both these conventions do the same */}
-                                <Field name={`tasks[${index}].taskName`} />
-                                <Field name={`tasks.${index}.time`} />
-                                <Field name={`tasks.${index}.percent`} />
-                    
-                                <button type="button" onClick={() => arrayHelpers.remove(index)}>
-                                -
-                                </button>
-                            </div>
-                            )}
-                            )}
-                            <button
-                            type="button"
-                            onClick={() => arrayHelpers.push({ name: '', age: '' })}
-                            >
-                            +
-                            </button>
+                    <div className={style.contentTab}>
+                        <div className={style.tabColumn + " " + style.padding + '' +style.titDate }>
+                            <Field id="dateReport" name="dateReport" /> 
                         </div>
-                        )}
-                    />
+                        <div className={style.tabColumn}>
+                            <Field component="textarea" id="projectName" name="projectName" /> 
+                        </div>
+                        <div className={style.tabRows}> 
+                            <FieldArray
+                                name="tasks"
+                                render={arrayHelpers => (
+                                <div>
+                                    {values.tasks.map((task, index) =>{                                
+                                        return (
+                                            <div className={style.tabInside} key={index}>
+                                                {/** both these conventions do the same */}
+                                                <Field className={style.itemTask} name={`tasks[${index}].taskName`} />
+                                                <Field className={style.itemTime} name={`tasks.${index}.time`} />
+                                                <Field className={style.itemPerc} name={`tasks.${index}.percent`} />
+                                            </div>
+                                        )}
+                                    )}
+                                    <button
+                                        type="button"
+                                        onClick={() => arrayHelpers.push({ name: '', age: '' })}
+                                        >
+                                        +
+                                    </button>
+                                </div>
+                                )}
+                            />
+                        </div>
                     </div>                                                
                 </div>
         </Form>            

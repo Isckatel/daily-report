@@ -2,6 +2,32 @@
     border: 1px solid black;
     margin: 5px;
     display: flex;
+    flex-direction: column;
+}
+
+.titleTab {
+    display: flex;
+}
+
+.titleItem {
+    border: 1px solid black;
+}
+
+.titDate {
+    min-width: 187px;
+}
+
+.nameProj {
+    min-width: 170px;
+}
+
+.per15 {
+    min-width: 18%;
+}
+
+.contentTab {
+    display: flex;
+    flex-direction: row;
 }
 
 .tabColumn {
@@ -16,20 +42,24 @@
 
 .tabInside {
     display:flex;
-    
-    border: 1px solid black;
 }
 
-.tabItem {
-    border-right: 1px solid black;
+
+.itemTask {
     padding: 5px;
-    flex: 1 0 33.33%;
+    max-width: 150px; 
 }
 
-.tabItemEnd {
+.itemTime {
     padding: 5px;
-    flex: 1 0 33.33%;
+    max-width: 150px; 
 }
+
+.itemPerc {
+    padding: 5px;
+    max-width: 70px; 
+}
+
 
 .padding {
     padding: 5px;
