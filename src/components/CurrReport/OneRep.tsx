@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './CurrReport.module.css';
-import {ReportElemType}from './CurrReportContainer';
+// import {ReportElemType}from './CurrReportContainer';
 import { Formik, Field, Form, FormikHelpers } from 'formik';
 
 type PropsOneRep = {
-    reportElem: ReportElemType
+    reportElem: any
 }
 
 const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
@@ -36,7 +36,7 @@ const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
             <div className={style.tabRows}>        
             {
                 props.reportElem.tasks.map(
-                    (t)=><div className={style.tabInside}>
+                    (t:any)=><div className={style.tabInside}>
                         <div className={style.tabItem}>{t.taskName}</div>
                         <div className={style.tabItem}>
                             {[t.time.getHours(), t.time.getMinutes()].map(function (x) {

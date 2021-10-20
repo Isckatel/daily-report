@@ -1,10 +1,10 @@
 import React from 'react';
 import style from './CurrReport.module.css';
-import {ReportElemType}from './CurrReportContainer';
+
 import { Formik, Field, Form, FieldArray, FormikHelpers } from 'formik';
 
 type PropsOneRep = {
-    reportElem: ReportElemType
+    reportElem: any
 }
 
 type TaskType = {
@@ -52,13 +52,12 @@ const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
                     <div className={style.tabRows}>        
                     {
                         props.reportElem.tasks.map(
-                            (t)=><div className={style.tabInside}>
+                            (t:any)=><div className={style.tabInside}>
                                     <div className={style.tabItem}>
                                         {t.taskName}
                                     </div>
                                     <div className={style.tabItem}>
-                                        {[t.time.getHours(), t.time.getMinutes()].map(function (x) {
-                                            return x < 10 ? "0" + x : x}).join(":")}
+                                        {t.time}
                                     </div>
                                     <div className={style.tabItemEnd}>
                                         {t.percent}
@@ -71,17 +70,21 @@ const OneRep:React.FC<PropsOneRep> = (props:PropsOneRep) => {
                         name="tasks"
                         render={arrayHelpers => (
                         <div>
-                            {values.tasks.map((task, index) => (
+                            {values.tasks.map((task, index) =>{ 
+                                
+                            return (
                             <div key={index}>
                                 {/** both these conventions do the same */}
                                 <Field name={`tasks[${index}].taskName`} />
+                                <Field name={`tasks.${index}.time`} />
                                 <Field name={`tasks.${index}.percent`} />
                     
                                 <button type="button" onClick={() => arrayHelpers.remove(index)}>
                                 -
                                 </button>
                             </div>
-                            ))}
+                            )}
+                            )}
                             <button
                             type="button"
                             onClick={() => arrayHelpers.push({ name: '', age: '' })}
